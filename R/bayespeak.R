@@ -262,6 +262,7 @@ bayespeak <- function(treatment, control, chr = NULL, start, end, bin.size = 100
 
 	for(i in 1:length(chr))
 	{
+		output <- list()
 		ch <- chr[i]
 		##get region
 		region <- region.full[i,1:2]
@@ -407,8 +408,6 @@ bayespeak <- function(treatment, control, chr = NULL, start, end, bin.size = 100
 
 		} else {
 			##(into.jobs == FALSE)
-
-			output <- list()
 
 			##Collect information on variance and autocorrelation
 			job.var <- 0.5 * c( var(tr$"+"$norm) + var(tr$"-"$norm), var(tr$"+"$off) + var(tr$"-"$off))
